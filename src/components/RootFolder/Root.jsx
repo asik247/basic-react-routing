@@ -23,6 +23,7 @@ const Root = () => {
                 <NavLink className='m-5' to="register">Register</NavLink>
                 <NavLink className='m-5' to="users">Users</NavLink>
                 <NavLink className='m-5' to="users2">Users2</NavLink>
+                <NavLink className='m-5' to="user/1">UsersDetails</NavLink>
                 </nav>
             </div>
             <Outlet></Outlet>
