@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from '../HomeFolder/Home';
-import { Outlet } from 'react-router';
+import { NavLink, Outlet } from 'react-router';
+import "../AncorStyle/Ancor.css"
 
 const Root = () => {
     return (
@@ -10,15 +11,19 @@ const Root = () => {
             <a href="login">Login</a> */}
             {/* <Home></Home> */}
             <div className='border-2 p-5 rounded-2xl'>
-                <a className='m-5' href="/">Root</a>
+                <nav>
+                <NavLink className='m-5' to="/">Root</NavLink>
 
-                <a className='m-5' href="about">About</a>
+                <NavLink className='m-5' to="about">About</NavLink>
 
-                <a className='m-5' href="login">Login</a>
+                <NavLink className='m-5' to="login">Login</NavLink>
 
-                <a className='m-5' href="submit">Submit</a>
-                <a className='m-5' href="add">Add</a>
-                <a className='m-5' href="register">Register</a>
+                <NavLink className='m-5' to="submit">Submit</NavLink>
+                <NavLink className='m-5' to="add">Add</NavLink>
+                <NavLink className='m-5' to="register">Register</NavLink>
+                <NavLink className='m-5' to="users">Users</NavLink>
+                <NavLink className='m-5' to="users2">Users2</NavLink>
+                </nav>
             </div>
             <Outlet></Outlet>
         </div>
