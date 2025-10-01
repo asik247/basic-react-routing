@@ -4,7 +4,7 @@ import User2Single from '../Users2Single/User2Single';
 
 const Users2 = () => {
     const user2 = useLoaderData()
-    console.log(user2)
+    // console.log(user2)
     return (
         <div>
             <h1>Hello i am User 2</h1>
