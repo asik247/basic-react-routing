@@ -11,11 +11,9 @@ import Submit from "./components/SubmitFolder/Submit.jsx";
 import Register from "./components/RegisterFolder/Register.jsx";
 import Add from "./components/AddFolder/Add.jsx";
 import Users from "./components/UsersData/Users.jsx";
-import Users2 from "./components/UsersData2/Users2.jsx";
 import UsersDetails from "./components/UsersDetails/UsersDetails.jsx";
-
-
-const users2Data = fetch("https://jsonplaceholder.typicode.com/users").then(res=>res.json());
+import Users2 from "./components/Users2/Users2.jsx";
+import Users2Details from "./components/Users2Details/Users2Details.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,16 +49,25 @@ const router = createBrowserRouter([
         Component:Users
       },
       {
-        path:'users2',
-        element: <Suspense fallback={<span>Loadding Data...</span>}>
-          <Users2 users2Data={users2Data}></Users2>
-        </Suspense>
-      },
-      {
         path:'user/:userId',
         loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
         Component:UsersDetails
+      },{
+        path:'user2',
+        loader:()=>fetch('https://jsonplaceholder.typicode.com/posts'),
+        Component:Users2
+      },
+      // {
+      //   path:'single:id',
+       
+      //   Component:UsersDetails
+      // }
+      {
+        path:'post/:postid',
+        loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/posts/${params.postid}`),
+        Component:Users2Details
       }
+
      
 
     ]

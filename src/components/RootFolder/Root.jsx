@@ -22,7 +22,9 @@ const Root = () => {
                 <NavLink className='m-5' to="add">Add</NavLink>
                 <NavLink className='m-5' to="register">Register</NavLink>
                 <NavLink className='m-5' to="users">Users</NavLink>
-                <NavLink className='m-5' to="users2">Users2</NavLink>
+                <NavLink className='m-5' to="user2">User2</NavLink>
+                {/* <NavLink className='m-5' to="users2">Users2</NavLink> */}
+                {/* <NavLink className='m-5' to="singleData">SigleDAta</NavLink> */}
                 {/* <NavLink className='m-5' to="user/1">UsersDetails</NavLink> */}
                 </nav>
             </div>
