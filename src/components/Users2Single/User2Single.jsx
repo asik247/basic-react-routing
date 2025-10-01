@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const User2Single = ({single}) => {
+    let navaget = useNavigate()
     // console.log(single)
     const {id}= single
     return (
@@ -9,6 +10,7 @@ const User2Single = ({single}) => {
             <p>{single.title}</p>
             <h6 className='text-sm'>{single.body}</h6>
             <Link to={`/post/${id}`}>show all</Link>  
+            <button onClick={()=>navaget('/users')}>Go back</button>
            
         </div>
     );

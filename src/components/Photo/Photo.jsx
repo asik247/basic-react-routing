@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, Navigate, useNavigate } from 'react-router';
 
 const Photo = ({singlePhoto}) => {
+   let navigate = useNavigate();
     // console.log(singlePhoto)
     const {id,body,title} = singlePhoto;
     return (
@@ -10,6 +11,9 @@ const Photo = ({singlePhoto}) => {
             <p>{body}</p>
             <p>{title}</p>
             <Link to={`/show/${id}`}>show</Link>
+            <button onClick={() => navigate('/user2')}>
+      Go Back
+    </button>
         </div>
     );
 };

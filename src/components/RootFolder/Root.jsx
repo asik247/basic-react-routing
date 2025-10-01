@@ -1,9 +1,11 @@
 import React from 'react';
 import Home from '../HomeFolder/Home';
-import { NavLink, Outlet } from 'react-router';
+import { NavLink, Outlet, useNavigation } from 'react-router';
 import "../AncorStyle/Ancor.css"
 
 const Root = () => {
+    const navigation = useNavigation();
+    const isNavigating = Boolean(navigation.location);
     return (
         <div>
             <h1>I am root</h1>
@@ -23,12 +25,18 @@ const Root = () => {
                 <NavLink className='m-5' to="register">Register</NavLink>
                 <NavLink className='m-5' to="users">Users</NavLink>
                 <NavLink className='m-5' to="user2">User2</NavLink>
-                <NavLink className='m-5' to="photos">Photos</NavLink>
+
+
+                <NavLink className='m-5' to="photos">Photos
+                {isNavigating && <span>Loadding....</span>}
+
+                </NavLink>
                 {/* <NavLink className='m-5' to="users2">Users2</NavLink> */}
                 {/* <NavLink className='m-5' to="singleData">SigleDAta</NavLink> */}
                 {/* <NavLink className='m-5' to="user/1">UsersDetails</NavLink> */}
                 </nav>
             </div>
+            {/* {isNavigating&& <span>Loaddin.g......</span>} */}
             <Outlet></Outlet>
         </div>
     );
